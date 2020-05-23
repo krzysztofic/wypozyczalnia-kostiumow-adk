@@ -1,15 +1,15 @@
 package com.sda.controller;
 
 
-import com.sda.model.Costume;
+
 import com.sda.service.OrderService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Set;
 
-@RestController
+@Controller
 public class CostumeController {
 
     private final OrderService orderService;
@@ -19,11 +19,8 @@ public class CostumeController {
     }
 
     @GetMapping(value = "/costumes", produces = "application/json")
-    public Set<Costume> findAllCostumes (@RequestParam(required = false) Long id) {
-
-        return orderService.findAll(id);
+    public ModelAndView findAllCostumes (@RequestParam(required = false) Long id) {
+        ModelAndView modelAndView = new ModelAndView("costume");
+        return modelAndView;
     }
-
-
-
 }
