@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Entity
 public class Costume {
@@ -59,5 +60,21 @@ public class Costume {
     public void setBorrowedTill(LocalDate borrowedTill) {
         this.borrowedTill = borrowedTill;
     }
-    
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Costume costume = (Costume) o;
+        return Objects.equals(id, costume.id) &&
+                Objects.equals(character, costume.character) &&
+                Objects.equals(borrowedTill, costume.borrowedTill);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, character, borrowedTill);
+    }
 }
