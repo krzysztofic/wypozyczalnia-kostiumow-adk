@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>
-        Twoje zamowienie
-    </title>
+    <title>Show message</title>
+    <meta charset="UTF-8">
 </head>
 <body>
-Dziekujemy za zamowienie!
+
+<h1>Result</h1>
+
+<p th:text="'Full Name: ' + ${user.name}"></p>
+<p th:text="'Email: ' + ${user.email}"></p>
+<p th:text="'Message: ' + ${user.message}"></p>
+<a href="/addUser">Submit another message</a>
+
 </body>
 </html>
