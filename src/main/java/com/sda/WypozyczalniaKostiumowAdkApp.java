@@ -19,7 +19,7 @@ public class WypozyczalniaKostiumowAdkApp {
         SpringApplication.run(WypozyczalniaKostiumowAdkApp.class, args);
     }
 
-@Autowired
+    @Autowired
     private CostumeRepository costumeRepository;
 
     @PostConstruct
