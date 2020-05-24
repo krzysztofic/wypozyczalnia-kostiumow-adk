@@ -22,8 +22,4 @@ public class WypozyczalniaKostiumowAdkApp {
 @Autowired
     private CostumeRepository costumeRepository;
 
-    @PostConstruct
-    public void init() {
-        costumeRepository.save(Costume.builder().name("abc").genre(Genre.ANIMALS).sex(Sex.FEMALE).size(Size.BIGMAMMA).borrowedTill(LocalDate.of(2020, 6, 5)).build());
     }
-}
