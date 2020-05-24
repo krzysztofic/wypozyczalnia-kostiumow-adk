@@ -26,5 +26,6 @@ public class Costume {
 
     private LocalDate borrowedTill;
 
-
+    public Costume() {
+    }
 }
