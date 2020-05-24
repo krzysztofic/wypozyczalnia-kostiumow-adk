@@ -1,12 +1,13 @@
 package com.sda.controller;
 
 
+import com.sda.model.User;
 import com.sda.service.OrderService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -30,6 +31,17 @@ public class CostumeController {
         ModelAndView modelAndView = new ModelAndView("costumes-bootstrap");
         modelAndView.addObject("costumes", orderService.findAll());
         return modelAndView;
+    }
+
+    @PostMapping("/costume/{id}/rent")
+    public String handleCostumeRent(@PathVariable("id")Long id, @ModelAttribute User user) {
+        //obsluga zamowienia
+        return "redirect:/thank-you";
+    }
+
+    @GetMapping("/thank-you")
+    public String thankYouPage(){
+        return "thank-you";
     }
 }
 

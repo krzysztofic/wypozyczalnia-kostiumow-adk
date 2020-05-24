@@ -2,6 +2,7 @@ package com.sda.service;
 
 
 import com.sda.model.Costume;
+import com.sda.model.User;
 import com.sda.repository.CostumeRepository;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +27,5 @@ public class OrderService {
         costumeRepository.findAll().forEach(costumes::add);
         return costumes;
     }
-
-
-
 
 }
