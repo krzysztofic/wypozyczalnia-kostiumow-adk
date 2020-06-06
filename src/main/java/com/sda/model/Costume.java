@@ -27,17 +27,11 @@ public class Costume {
     private Genre genre;
     @Enumerated(EnumType.STRING)
     private Sex sex;
-
     private LocalDate borrowedTill;
-
     private String imageUrl;
     private Double price;
 
-
     public String getFormattedPrice(){
         return price + " PLN";
-
     }
-
 }
-

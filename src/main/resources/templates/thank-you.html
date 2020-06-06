@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+        h1 {
+            font-size: 45px;
+           margin-left: 13px;
+           margin-bottom: 13px;
+        }
+
+        p {
+            font-style: oblique;
+            font-size: 19px;
+            margin: 13px;
+        }
+
+        a {
+            font-size: 19px;
+            margin: 13px;
+        }
+    </style>
+    <title>Message</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
+</head>
+
+<body>
+
+<h1>Thank you for your message!</h1>
+
+<p th:text="'Email: ' + ${user.email}"/>
+<p th:text="'Full name: ' + ${user.name}"/>
+<p th:text="'Your message:  ' + ${user.message}"/>
+
+<a href="/rentForm">Submit another message</a>
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
+<script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

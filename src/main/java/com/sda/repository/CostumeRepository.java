@@ -9,5 +9,4 @@ import java.util.Set;
 public interface CostumeRepository extends JpaRepository<Costume, Long> {
 
     Set<Costume> findAllById(Long id);
-
 }
