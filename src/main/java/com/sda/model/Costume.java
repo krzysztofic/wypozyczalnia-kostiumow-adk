@@ -32,6 +32,6 @@ public class Costume {
     private Double price;
 
     public String getFormattedPrice() {
-        return price + " PLN";
+        return String.format("%.2f",price) + " PLN";
     }
 }
