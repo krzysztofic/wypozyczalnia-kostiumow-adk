@@ -26,7 +26,7 @@ public class CostumeController {
         return modelAndView;
     }
 
-    @GetMapping("/costume")
+    @GetMapping("/costumes")
     public ModelAndView showAll() {
         ModelAndView modelAndView = new ModelAndView("costumes-bootstrap");
         modelAndView.addObject("costumes", orderService.findAll());
