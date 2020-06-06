@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title> | ADK Wypożyczalnia Kostiumów </title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
@@ -23,7 +23,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">ADK Wypożyczalnia Kostiumów</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,18 +31,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
+                    <a class="nav-link" href="costumes">Strona główna
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="about">O nas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="rentForm">Kontakt</a>
                 </li>
             </ul>
         </div>
@@ -50,11 +47,66 @@
 </nav>
 
 <!-- Page Content -->
+<div class="container">
+    <div class="row">
 
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+            <!-- Title -->
+            <h1 class="mt-4" th:text="${costume.name}"></h1>
+
+            <!-- Preview Image -->
+            <img class="img-fluid rounded mt-4" th:src= "${costume.imageUrl}" src="http://placehold.it/500x900" alt="">
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+            <!-- Search Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Search</h5>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Informacje</h5>
+                <div class="card-body">
+                    <p>Rodzaj: <span th:text="${costume.sex}"></span></p>
+                    <p>Opis kostiumu: </p>
+                    <section>Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker</section>
+                </div>
+            </div>
+
+            <!-- Sizes -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle btn-lg btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dostępne rozmiary:
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" th:text="${costume.size}"></a>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg btn-block mt-5">ZAMÓW TERAZ</button>
+
+        </div>
+    </div>
+</div>
 
 <!-- Bootstrap core JavaScript -->
 <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
 <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>
