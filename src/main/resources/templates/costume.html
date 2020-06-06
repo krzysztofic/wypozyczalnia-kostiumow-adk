@@ -57,8 +57,14 @@
             <h1 class="mt-4" th:text="${costume.name}"></h1>
 
             <!-- Preview Image -->
-            <img class="img-fluid rounded mt-4" th:src= "${costume.imageUrl}" src="http://placehold.it/500x900" alt="">
+            <img class="img-fluid mt-4" th:src= "${costume.imageUrl}" src="http://placehold.it/500x900" alt="">
 
+            <!-- Additional Images -->
+            <section>
+            <img class="img-fluid rounded mt-4" src="http://placehold.it/150x200" alt="">
+            <img class="img-fluid rounded mt-4" src="http://placehold.it/150x200" alt="">
+            <img class="img-fluid rounded mt-4" src="http://placehold.it/150x200" alt="">
+            </section>
         </div>
 
         <!-- Sidebar Widgets Column -->
@@ -81,6 +87,7 @@
             <div class="card my-4">
                 <h5 class="card-header">Informacje</h5>
                 <div class="card-body">
+                    <h3>Cena: <span th:text="${costume.formattedPrice}"></span></h3>
                     <p>Rodzaj: <span th:text="${costume.sex}"></span></p>
                     <p>Opis kostiumu: </p>
                     <section>Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker</section>
@@ -97,6 +104,7 @@
                 </div>
             </div>
 
+            <!--Button -->
             <button type="button" class="btn btn-primary btn-lg btn-block mt-5">ZAMÓW TERAZ</button>
 
         </div>
