@@ -31,8 +31,7 @@ public class Costume {
     private String imageUrl;
     private Double price;
 
-    public String getFormattedPrice(){
+    public String getFormattedPrice() {
         return price + " PLN";
     }
-
 }

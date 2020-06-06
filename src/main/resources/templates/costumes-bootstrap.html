@@ -60,13 +60,13 @@
 
             <div th:each="costume : ${costumes}" class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <a th:href="@{'/costume/' + ${costume.id}}"><img class="card-img-top" th:src= "${costume.imageUrl}" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#" th:text="${costume.name}">j</a>
+                            <a th:href="@{'/costume/' + ${costume.id}}" th:text="${costume.name}">j</a>
                         </h4>
-                        <h5>$24.99</h5>
-                        <p class="card-text" >Super <span th:text="${costume.sex}">Male</span>, Rozmiar: <span th:text="${costume.size}">L</span></p>
+                        <h5>Cena: <span th:text="${costume.price}"></span></h5>
+                        <p class="card-text" >Rodzaj: <span th:text="${costume.sex}">Male</span>, Rozmiar: <span th:text="${costume.size}">L</span></p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
