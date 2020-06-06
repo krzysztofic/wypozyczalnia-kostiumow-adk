@@ -30,4 +30,14 @@ public class Costume {
 
     private LocalDate borrowedTill;
 
+    private String imageUrl;
+    private Double price;
+
+
+    public String getFormattedPrice(){
+        return price + " PLN";
+
+    }
+
 }
+
