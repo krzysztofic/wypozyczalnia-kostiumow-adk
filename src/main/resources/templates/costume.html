@@ -15,7 +15,6 @@
 
     <!-- Custom styles for this template -->
     <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
-
 </head>
 
 
@@ -31,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="costumes">Strona główna
+                    <a class="nav-link" href="/costumes">Strona główna
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -39,7 +38,7 @@
                     <a class="nav-link" href="about">O nas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="rentForm">Kontakt</a>
+                    <a class="nav-link" href="/rentForm">Kontakt</a>
                 </li>
             </ul>
         </div>
@@ -58,30 +57,10 @@
 
             <!-- Preview Image -->
             <img class="img-fluid mt-4" th:src= "${costume.imageUrl}" src="http://placehold.it/500x900" alt="">
-
-            <!-- Additional Images -->
-            <section>
-            <img class="img-fluid rounded mt-4" src="http://placehold.it/150x200" alt="">
-            <img class="img-fluid rounded mt-4" src="http://placehold.it/150x200" alt="">
-            <img class="img-fluid rounded mt-4" src="http://placehold.it/150x200" alt="">
-            </section>
         </div>
 
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
-
-            <!-- Search Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Search</h5>
-                <div class="card-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
-                    </div>
-                </div>
-            </div>
 
             <!-- Side Widget -->
             <div class="card my-4">
@@ -89,8 +68,9 @@
                 <div class="card-body">
                     <h3>Cena: <span th:text="${costume.formattedPrice}"></span></h3>
                     <p>Rodzaj: <span th:text="${costume.sex}"></span></p>
+                    <p>Materiał: <span th:text="${costume.material}"></span></p>
                     <p>Opis kostiumu: </p>
-                    <section>Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker</section>
+                    <span th:text="${costume.description}"></span>
                 </div>
             </div>
 
@@ -112,7 +92,7 @@
                     <path fill-rule="evenodd" d="M14 9H2v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9zM2 8a1 1 0 0 0-1 1v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1H2z"/>
                     <path fill-rule="evenodd" d="M4 10a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
                 </svg>
-                <a href="/rentForm">WYŚLIJ ZAMÓWIENIE</a>
+                <a href="/rentForm" style="color:white">WYŚLIJ ZAMÓWIENIE</a>
             </button>
 
         </div>
@@ -124,7 +104,7 @@
                         <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z"/>
                         <path fill-rule="evenodd" d="M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z"/>
                     </svg>
-                    POWRÓT DO LISTY KOSTIUMÓW
+                    <a href="/costumes" style="color:white">POWRÓT DO LISTY KOSTIUMÓW</a>
                 </button>
             </div>
         </div>

@@ -30,6 +30,8 @@ public class Costume {
     private LocalDate borrowedTill;
     private String imageUrl;
     private Double price;
+    private String material;
+    private String description;
 
     public String getFormattedPrice() {
         return String.format("%.2f",price) + " PLN";
