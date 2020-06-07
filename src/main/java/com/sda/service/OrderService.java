@@ -25,7 +25,7 @@ public class OrderService {
         costumeRepository.findAll().forEach(costumes::add);
         return costumes;
     }
-    public Costume getOne() {
-        return costumeRepository.getOne(1L);
+    public Costume getOne(Long id) {
+        return costumeRepository.getOne(id);
     }
 }

@@ -23,7 +23,7 @@ public class CostumeController {
     @GetMapping(value = "/costume/{id}", produces = "application/json")
     public ModelAndView findAllCostumes(@PathVariable(required = false) Long id) {
         ModelAndView modelAndView = new ModelAndView("costume");
-        modelAndView.addObject("costume", orderService.getOne());
+        modelAndView.addObject("costume", orderService.getOne(id));
         return modelAndView;
     }
 
