@@ -22,4 +22,4 @@ public class WypozyczalniaKostiumowAdkApp {
     @Autowired
     private CostumeRepository costumeRepository;
 
-    }
+}

@@ -24,7 +24,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">ADK Wypożyczalnia Kostiumów</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,18 +32,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
+                    <a class="nav-link" href="costumes">Strona główna
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="about">O Nas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                <li class="active">
+                    <a class="nav-link" href="rentForm">Kontakt</a>
                 </li>
             </ul>
         </div>
@@ -60,12 +57,12 @@
 
             <div th:each="costume : ${costumes}" class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a th:href="@{'/costume/' + ${costume.id}}"><img class="card-img-top" th:src= "${costume.imageUrl}" src="http://placehold.it/700x400" alt=""></a>
+                    <a class="h-100" th:href="@{'/costume/' + ${costume.id}}"><img class="card-img-top" th:src= "${costume.imageUrl}" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
                             <a th:href="@{'/costume/' + ${costume.id}}" th:text="${costume.name}">j</a>
                         </h4>
-                        <h5>Cena: <span th:text="${costume.price}"></span></h5>
+                        <h5>Cena: <span th:text="${costume.formattedPrice}"></span></h5>
                         <p class="card-text" >Rodzaj: <span th:text="${costume.sex}">Male</span>, Rozmiar: <span th:text="${costume.size}">L</span></p>
                     </div>
                     <div class="card-footer">

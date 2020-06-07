@@ -17,9 +17,11 @@ public class OrderService {
     public OrderService(CostumeRepository costumeRepository) {
         this.costumeRepository = costumeRepository;
     }
+
     public List<Costume> findAll() {
         return costumeRepository.findAll();
     }
+
     public List<Costume> listAll() {
         List<Costume> costumes = new ArrayList<>();
         costumeRepository.findAll().forEach(costumes::add);
