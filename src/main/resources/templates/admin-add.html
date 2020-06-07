@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Admin Site - add new Costume</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">O nas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Services</a>
@@ -45,60 +45,55 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="admin">Admin</a>
-                </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Page Content -->
-<div class="container">
+<div col-12>
+<h1>Dodaj nowy kostium</h1>
 
-    <div class="row">
-
-
-        <div class="row">
-
-            <div th:each="costume : ${costumes}" class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <a class="h-100" th:href="@{'/costume/' + ${costume.id}}"><img class="card-img-top"
-                                                                                   th:src="${costume.imageUrl}"
-                                                                                   src="http://placehold.it/700x400"
-                                                                                   alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a th:href="@{'/costume/' + ${costume.id}}" th:text="${costume.name}">j</a>
-                        </h4>
-                        <h5>Cena: <span th:text="${costume.formattedPrice}"></span></h5>
-                        <p class="card-text">Rodzaj: <span th:text="${costume.sex}">Male</span>, Rozmiar: <span
-                                th:text="${costume.size}">L</span></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                    </div>
-                </div>
-            </div>
-
+<form action="#" th:action="@{/admin}" th:object="${costume}" method="post">
+    <div class="form-group">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" placeholder="Name" th:field="*{name}">
         </div>
-        <!-- /.row -->
-
-        <!-- /.col-lg-9 -->
-
     </div>
-    <!-- /.row -->
+    <div class="form-group">
+        <label for="size" class="col-sm-2 col-form-label">Sizes</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="size" placeholder="Size" th:field="*{size}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="genre" class="col-sm-2 col-form-label">Genre</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="genre" placeholder="Genre" th:field="*{genre}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sex" class="col-sm-2 col-form-label">Sex</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="sex" placeholder="Sex" th:field="*{sex}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="image" class="col-sm-2 col-form-label">Image</label>
+        <div class="col-sm-10">
+            <input type="url" class="form-control" id="image" placeholder="Image" th:field="*{imageUrl}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="price" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="price" placeholder="Price" th:field="*{price}">
+        </div>
+    </div>
 
+</form>
 </div>
-<!-- /.container -->
 
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
