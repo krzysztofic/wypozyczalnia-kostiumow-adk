@@ -47,6 +47,5 @@ public class CostumeController {
     public String About() {
         return "about";
     }
-
 }
 
