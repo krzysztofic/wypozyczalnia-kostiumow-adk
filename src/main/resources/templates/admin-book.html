@@ -57,49 +57,5 @@
     </div>
 </nav>
 
-<div>
-    <center>
-        <a href="admin/add" class="btn btn-primary btn-sm">Dodaj kostium</a>
-        <a href="admin/book" class="btn btn-primary btn-sm">Zarezerwuj kostium</a>
-    </center>
-</div>
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>SIZE</th>
-            <th>GENRE</th>
-            <th>SEX</th>
-            <th>BORROWED TILL</th>
-            <th>IMAGE</th>
-            <th>PRICE</th>
-            <th>REMOVE</th>
-
-        </tr>
-    </thead>
-    <tbody>
-    <tr th:each="costume : ${costumes}">
-        <td th:text="${costume.id}"> </td>
-        <td th:text="${costume.name}"> </td>
-        <td th:text="${costume.size}"> </td>
-        <td th:text="${costume.genre}"> </td>
-        <td th:text="${costume.sex}"> </td>
-        <td th:text="${costume.borrowedTill}"> </td>
-        <td th:text="${costume.imageUrl}"> </td>
-        <td th:text="${costume.price}"> </td>
-        <td><a href="#" th:href="'/admin/remove?id='+${costume.id}">X</a></td>
-
-    </tr>
-    </tbody>
-</table>
-
-
-<!-- Bootstrap core JavaScript -->
-<script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
-<script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>

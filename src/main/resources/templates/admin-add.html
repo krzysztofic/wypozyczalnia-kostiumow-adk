@@ -53,7 +53,7 @@
 <div col-12>
 <h1>Dodaj nowy kostium</h1>
 
-<form action="#" th:action="@{/admin}" th:object="${costume}" method="post">
+<form action="#" th:action="@{/admin/add}" th:object="${costume}" method="post">
     <div class="form-group">
         <label for="name" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
@@ -61,21 +61,27 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="size" class="col-sm-2 col-form-label">Sizes</label>
+        <label for="size" class="col-sm-2 col-form-label">Size</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="size" placeholder="Size" th:field="*{size}">
+            <select type="text" class="form-control" id="size" placeholder="Size" th:field="*{size}">
+                <option th:each="size : ${sizes}" th:value="${size}" th:text="${size}"></option>
+            </select>
         </div>
     </div>
     <div class="form-group">
         <label for="genre" class="col-sm-2 col-form-label">Genre</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="genre" placeholder="Genre" th:field="*{genre}">
+            <select type="text" class="form-control" id="genre" placeholder="Genre" th:field="*{genre}">
+                <option th:each="genre : ${genres}" th:value="${genre}" th:text="${genre}"></option>
+            </select>
         </div>
     </div>
     <div class="form-group">
         <label for="sex" class="col-sm-2 col-form-label">Sex</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="sex" placeholder="Sex" th:field="*{sex}">
+            <select type="text" class="form-control" id="sex" placeholder="Sex" th:field="*{sex}">
+                <option th:each="gender : ${genders}" th:value="${gender}" th:text="${gender}"></option>
+            </select>
         </div>
     </div>
     <div class="form-group">
@@ -90,6 +96,9 @@
             <input type="text" class="form-control" id="price" placeholder="Price" th:field="*{price}">
         </div>
     </div>
+        <div class="col-sm-10">
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </div>
 
 </form>
 </div>

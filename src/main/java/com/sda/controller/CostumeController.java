@@ -35,35 +35,5 @@ public class CostumeController {
         modelAndView.addObject("costumes", orderService.findAll());
         return modelAndView;
     }
-
-    @GetMapping("/rentForm")
-    public String sendForm(User user) {
-        return "rentForm";
-    }
-
-    @PostMapping("/rentForm")
-    public String handleCostumeForm(@ModelAttribute User user) {
-        return "thank-you";
-    }
-
-    @GetMapping("/admin")
-    public ModelAndView adminSite() {
-        ModelAndView modelAndView = new ModelAndView("admin-site");
-        modelAndView.addObject("costumes", orderService.findAll());
-        return modelAndView;
-    }
-
-    @GetMapping("/admin/add")
-    public String addNewCostume(Costume costume) {
-        return "admin-add";
-    }
-
-    @PostMapping(value = "/admin", consumes = "application/json")
-    public ResponseEntity<Long> addCostume(@RequestBody Costume costume) {
-        Costume addedCostume = orderService.add(costume.getId(), costume.getName(), costume.getSize(), costume.getGenre(),
-                costume.getSex(), costume.getBorrowedTill(), costume.getImageUrl(), costume.getPrice());
-        return new ResponseEntity<>(addedCostume.getId(), HttpStatus.CREATED);
-
-    }
 }
 

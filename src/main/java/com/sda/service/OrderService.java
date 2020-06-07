@@ -28,4 +28,8 @@ public class OrderService {
     public Costume add(Long id, String name, Size size, Genre genre, Sex sex, LocalDate borrowedTill, String imageUrl, Double price) {
         return costumeRepository.save(new Costume(id, name, size, genre, sex, borrowedTill, imageUrl, price));
     }
+
+    public void remove(Long id) {
+        costumeRepository.delete(costumeRepository.findById(id).get());
+    }
 }
