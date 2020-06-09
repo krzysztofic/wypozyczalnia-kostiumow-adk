@@ -20,6 +20,12 @@ public class CostumeController {
         this.orderService = orderService;
     }
 
+    @GetMapping(value = "/")
+    public ModelAndView showWebSite() {
+        ModelAndView modelAndView = new ModelAndView("index");
+        return modelAndView;
+    }
+
     @GetMapping(value = "/costume/{id}", produces = "application/json")
     public ModelAndView findAllCostumes(@PathVariable(required = false) Long id) {
         ModelAndView modelAndView = new ModelAndView("costume");
