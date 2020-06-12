@@ -11,11 +11,14 @@
     <title>Shop Homepage - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
 
+    <!-- My own CSS -->
+    <link href="/static/style.css" rel="stylesheet" type='text/css'/>
 </head>
 
 <body>
@@ -86,18 +89,22 @@
             <div class="row">
 
                 <div th:each="costume,iterStat : ${costumes}" th:value="${costume.id}" th:unless="${iterStat.index > 5}"
-                 class="col-lg-4 col-md-6 mb-4">
+                     class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a class="h-100" th:href="@{'/costume/' + ${costume.id}}"><img class="card-img-top" th:src= "${costume.imageUrl}" src="http://placehold.it/700x400" alt=""></a>
+                        <a class="h-100" th:href="@{'/costume/' + ${costume.id}}"><img class="card-img-top"
+                                                                                       th:src="${costume.imageUrl}"
+                                                                                       src="http://placehold.it/700x400"
+                                                                                       alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a th:href="@{'/costume/' + ${costume.id}}" th:text="${costume.name}">j</a>
                             </h4>
                             <h5 th:text="${costume.formattedPrice}"></h5>
-                            <p class="card-text">Rodzaj: <span th:text="${costume.sex}">Male</span>, Rozmiar: <span th:text="${costume.size}">L</span></p>
+                            <p class="card-text">Rodzaj: <span th:text="${costume.sex}">Male</span>, Rozmiar: <span
+                                    th:text="${costume.size}">L</span></p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            <a href="/rentForm" role="button" class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
                         </div>
                     </div>
                 </div>
@@ -106,10 +113,13 @@
             <!-- /.row -->
 
         </div>
-        <!-- /.col-lg-9 -->
+        <!-- /.col-lg-12 -->
 
     </div>
     <!-- /.row -->
+    <div class="row mb-5">
+        <a href="/costumes" role="button" class="btn btn-primary btn-lg btn-block">ZOBACZ WSZYSTKIE KOSTIUMY</a>
+      </div>
 
 </div>
 <!-- /.container -->
