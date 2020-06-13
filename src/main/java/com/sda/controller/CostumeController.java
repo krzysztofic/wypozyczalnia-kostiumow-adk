@@ -1,17 +1,14 @@
 package com.sda.controller;
 
-
 import com.sda.model.Costume;
 import com.sda.model.User;
 import com.sda.service.OrderService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 
 @Controller
 public class CostumeController {
@@ -22,7 +19,7 @@ public class CostumeController {
         this.orderService = orderService;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping("/")
     public ModelAndView showWebSite(@ModelAttribute Costume costume) {
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("costumes", orderService.findAll());
