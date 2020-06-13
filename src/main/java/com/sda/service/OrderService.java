@@ -43,4 +43,10 @@ public class OrderService {
         }
         return notBorrowedCostume;
     }
+
+    public Costume returnCostume(Long id) {
+        Costume costumeToReturn = costumeRepository.findById(id).get();
+        costumeToReturn.setBorrowedTill(null);
+        return costumeRepository.save(costumeToReturn);
+    }
 }

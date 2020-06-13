@@ -76,6 +76,7 @@
             <th>PRICE</th>
             <th>REMOVE</th>
             <th>BORROW</th>
+            <th>RETURN</th>
 
         </tr>
     </thead>
@@ -91,7 +92,7 @@
         <td th:text="${costume.price}"> </td>
         <td><a href="#" th:href="'/admin/remove?id='+${costume.id}">X</a></td>
         <td><a href="#" th:href="'/admin/book?id='+${costume.id}" class="btn btn-primary btn-sm">Zarezerwuj kostium</a></td>
-
+        <td><a href="#" th:href="'/admin/return?id='+${costume.id}" class="btn btn-primary btn-sm">Anuluj rezerwacje</a></td>
 
     </tr>
     </tbody>

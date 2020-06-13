@@ -53,4 +53,10 @@ public class AdminController {
         orderService.borrowCostume(id);
         return "redirect:/admin";
     }
+
+    @GetMapping("/admin/return")
+    public String returnCostume(@RequestParam("id") Long id) {
+        orderService.returnCostume(id);
+        return "redirect:/admin";
+    }
 }
