@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OrderService {
@@ -31,5 +32,15 @@ public class OrderService {
 
     public void remove(Long id) {
         costumeRepository.delete(costumeRepository.findById(id).get());
+    }
+    public Optional<Costume> borrowCostume(Long id) {
+        Optional<Costume> notBorrowedCostume = costumeRepository.findAllById(id).stream()
+                .filter(costume -> costume.getBorrowedTill() == null).findAny();
+        if (notBorrowedCostume.isPresent()) {
+            Costume costumeToBorrow = notBorrowedCostume.get();
+            costumeToBorrow.setBorrowedTill(LocalDate.now().plusDays(7));
+            return Optional.of(costumeRepository.save(costumeToBorrow));
+        }
+        return notBorrowedCostume;
     }
 }

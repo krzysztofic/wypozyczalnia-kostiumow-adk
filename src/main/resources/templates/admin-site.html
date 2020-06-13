@@ -60,7 +60,6 @@
 <div>
     <center>
         <a href="admin/add" class="btn btn-primary btn-sm">Dodaj kostium</a>
-        <a href="admin/book" class="btn btn-primary btn-sm">Zarezerwuj kostium</a>
     </center>
 </div>
 
@@ -76,6 +75,7 @@
             <th>IMAGE</th>
             <th>PRICE</th>
             <th>REMOVE</th>
+            <th>BORROW</th>
 
         </tr>
     </thead>
@@ -90,6 +90,8 @@
         <td th:text="${costume.imageUrl}"> </td>
         <td th:text="${costume.price}"> </td>
         <td><a href="#" th:href="'/admin/remove?id='+${costume.id}">X</a></td>
+        <td><a href="#" th:href="'/admin/book?id='+${costume.id}" class="btn btn-primary btn-sm">Zarezerwuj kostium</a></td>
+
 
     </tr>
     </tbody>

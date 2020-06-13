@@ -49,7 +49,8 @@ public class AdminController {
     }
 
     @GetMapping("/admin/book")
-    public String BookCostume() {
-        return "admin-book";
+    public String bookCostume(@RequestParam("id") Long id) {
+        orderService.borrowCostume(id);
+        return "redirect:/admin";
     }
 }
