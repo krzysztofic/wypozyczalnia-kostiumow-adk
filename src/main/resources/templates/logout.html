@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
@@ -8,10 +8,10 @@
           rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet" >
-    <link rel = "stylesheet"
-          type = "text/css"
-          href = "/style.css"/>
+    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
+    <link rel="stylesheet"
+          type="text/css"
+          href="/style.css"/>
 
 </head>
 <body>
@@ -48,18 +48,11 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-
-         <!-- Login Form -->
-        <form action="#" th:action="@{/login}"  method="POST" >
-
-            <input type="text" id="login" class="fadeIn second" th:name="username" placeholder="username">
-            <input type="text" id="password" class="fadeIn third" th:name="password" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In">
-        </form>
-
+        <a href="/admin" class="btn btn-primary btn-lg">Zaloguj ponownie</a><br><br>
+        <a href="/" class="btn btn-primary btn-lg">Strona Główna</a>
     </div>
-
 </div>
+
 
 <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
 <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
