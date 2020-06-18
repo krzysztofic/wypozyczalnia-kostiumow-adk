@@ -19,7 +19,7 @@ public class CostumePageController {
         model.addAttribute("data", pageable
                 .findAll(PageRequest.of(page, 4)));
         model.addAttribute("currentPage, page");
-        return "costumes-bootstrap";
+        return "costumes";
 
     }
 }
