@@ -22,4 +22,9 @@ public class OrderService {
         costumeRepository.findAll().forEach(costumes::add);
         return costumes;
     }
+
+    public List<Costume> findByName (String name) {
+        return costumeRepository.findByNameLike("%"+name+"%");
+    }
+
 }
