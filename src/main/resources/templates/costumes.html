@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ADK - wypożyczalnia kostiumówe</title>
+    <title>ADK - wypożyczalnia kostiumów</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
@@ -17,6 +17,8 @@
     <!-- Custom styles for this template -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
 
+    <!-- My own CSS -->
+    <link href="/static/style.css" rel="stylesheet" type='text/css'/>
 </head>
 
 <body>
@@ -71,26 +73,21 @@
                     <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                 </div>
             </div>
+
         </div>
-        <!-- /.col-lg-9 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled" th:each="i : ${#numbers.sequence(0,data.totalPages -1)}">
-                    <a class="page-link" th:href="@{/(page=${i})}" th:text="${i}"
-                    th:classappend="${currentPage}==${i}?'active':''"></a>
-                </li>
-      <!--          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>-->
+        <!-- /.col-lg-4 -->
+        <div class="row my-3 w-100 align-item-center justify-content-center">
+            <ul class="nav nav-pills">
+                <li class="nav-item" th:each="i : ${#numbers.sequence(0,costumes.totalPages-1)}">
+                    <a class="nav-link"
+                       th:href="@{/costumes/(page=${i})}"
+                       th:text="${i}"
+                       th:classappend="${currentPage}==${i}?'active':''"></a>
                 </li>
             </ul>
-        </nav>
+        </div>
     </div>
+    <!-- /.row -->
 </div>
 <!-- /.container -->
 
@@ -101,6 +98,7 @@
     </div>
     <!-- /.container -->
 </footer>
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>

@@ -2,12 +2,13 @@ package com.sda.controller;
 
 import com.sda.model.Costume;
 import com.sda.model.User;
+import com.sda.repository.CostumeRepository;
 import com.sda.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -18,6 +19,9 @@ public class CostumeController {
     public CostumeController(OrderService orderService) {
         this.orderService = orderService;
     }
+
+    @Autowired
+    private CostumeRepository costumeRepository;
 
     @GetMapping("/")
     public ModelAndView showWebSite(@ModelAttribute Costume costume) {
@@ -33,9 +37,10 @@ public class CostumeController {
     }
 
     @GetMapping("/costumes")
-    public ModelAndView showAll() {
+    public ModelAndView showAll(Model model, @RequestParam(defaultValue = "0")int page) {
         ModelAndView modelAndView = new ModelAndView("costumes");
-        modelAndView.addObject("costumes", orderService.findAll());
+        modelAndView.addObject("costumes", costumeRepository.findAll(PageRequest.of(page, 6)));
+        model.addAttribute("currentPage", page);
         return modelAndView;
     }
 
