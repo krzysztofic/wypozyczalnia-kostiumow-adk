@@ -5,4 +5,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface CostumeRepository extends PagingAndSortingRepository<Costume, Long> {
 
+    Costume getOne(Long id);
 }
