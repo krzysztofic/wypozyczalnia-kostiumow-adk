@@ -1,8 +1,8 @@
 package com.sda.repository;
 
 import com.sda.model.Costume;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface CostumeRepository extends JpaRepository<Costume, Long> {
+public interface CostumeRepository extends PagingAndSortingRepository<Costume, Long> {
 
 }
