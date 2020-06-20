@@ -24,13 +24,10 @@ public class CostumeController {
         this.orderService = orderService;
     }
 
-    @Autowired
-    private CostumeRepository costumeRepository;
-
     @GetMapping("/")
     public ModelAndView showWebSite(@ModelAttribute Costume costume) {
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("costumes", orderService.findAll());
+        modelAndView.addObject("costumes", orderService.findAll(PageRequest.of(0, 6)));
         return modelAndView;
     }
 
@@ -41,10 +38,10 @@ public class CostumeController {
     }
 
     @GetMapping("/costumes")
-    public ModelAndView showAll(Model model, @RequestParam(defaultValue = "0")int page) {
+    public ModelAndView showAll(@RequestParam(defaultValue = "0")int page) {
         ModelAndView modelAndView = new ModelAndView("costumes");
-        modelAndView.addObject("costumes", costumeRepository.findAll(PageRequest.of(page, 6)));
-        model.addAttribute("currentPage", page);
+        modelAndView.addObject("costumes", orderService.findAll(PageRequest.of(page, 6)));
+        modelAndView.addObject("currentPage", page);
         return modelAndView;
     }
 
