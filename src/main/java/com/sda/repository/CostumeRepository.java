@@ -8,6 +8,6 @@ import java.util.Set;
 
 public interface CostumeRepository extends JpaRepository<Costume, Long> {
 
-    List<Costume> findByNameLike(String name);
+    List<Costume> findByNameLikeIgnoreCase(String name);
 }
 

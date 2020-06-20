@@ -24,7 +24,7 @@ public class OrderService {
     }
 
     public List<Costume> findByName (String name) {
-        return costumeRepository.findByNameLike("%"+name+"%");
+        return costumeRepository.findByNameLikeIgnoreCase("%"+name+"%");
     }
 
 }

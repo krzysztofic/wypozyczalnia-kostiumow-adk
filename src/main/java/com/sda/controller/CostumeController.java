@@ -31,7 +31,7 @@ public class CostumeController {
     }
 
     @GetMapping("/costumes")
-    public ModelAndView showAll(Model model, @RequestParam(defaultValue="") String name) {
+    public ModelAndView showAll(@RequestParam(defaultValue="") String name) {
         ModelAndView modelAndView = new ModelAndView("costumes-bootstrap");
         modelAndView.addObject("costumes", orderService.findByName(name));
         return modelAndView;
@@ -46,11 +46,6 @@ public class CostumeController {
     public String handleCostumeForm(@ModelAttribute User user) {
         return "thank-you";
     }
-    /*@GetMapping("/costumes/{name}")
-    public String findAllCostumes (Model model, @RequestParam(defaultValue="") String name) {
-        model.addAttribute("costumes", orderService.findByName(name));
-        return "views/list";
-    }*/
 
 }
 
