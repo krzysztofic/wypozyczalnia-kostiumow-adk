@@ -38,7 +38,7 @@ public class AdminController {
     @PostMapping(value = "/admin/add")
     public String addCostume(@ModelAttribute Costume costume) {
         orderService.add(costume.getId(), costume.getName(), costume.getSize(), costume.getGenre(),
-                costume.getSex(), costume.getBorrowedTill(), costume.getImageUrl(), costume.getPrice());
+                costume.getSex(), costume.getBorrowedTill(), costume.getImageUrl(), costume.getPrice(),costume.getMaterial(), costume.getDescription());
         return "redirect:/admin";
     }
 

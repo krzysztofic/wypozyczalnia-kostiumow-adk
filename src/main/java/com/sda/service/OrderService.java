@@ -1,33 +1,41 @@
 package com.sda.service;
 
-
 import com.sda.model.*;
+import com.sda.model.Costume;
 import com.sda.repository.CostumeRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
+import java.util.List;
 
 @Service
 public class OrderService {
 
-    private final CostumeRepository costumeRepository;
+    private CostumeRepository costumeRepository;
 
     public OrderService(CostumeRepository costumeRepository) {
         this.costumeRepository = costumeRepository;
     }
-    public List<Costume> findAll() {
-        return costumeRepository.findAll();
+
+    public Page<Costume> findAll(PageRequest page) {
+        return costumeRepository.findAll(page);
     }
+
     public List<Costume> listAll() {
         List<Costume> costumes = new ArrayList<>();
         costumeRepository.findAll().forEach(costumes::add);
         return costumes;
     }
-    public Costume add(Long id, String name, Size size, Genre genre, Sex sex, LocalDate borrowedTill, String imageUrl, Double price) {
-        return costumeRepository.save(new Costume(id, name, size, genre, sex, borrowedTill, imageUrl, price));
+
+    public Costume getOne(Long id) {
+        return costumeRepository.getOne(id);
+    }
+    public Costume add(Long id, String name, Size size, Genre genre, Sex sex, LocalDate borrowedTill, String imageUrl, Double price, String material, String description) {
+        return costumeRepository.save(new Costume(id, name, size, genre, sex, borrowedTill, imageUrl, price, material, description));
     }
 
     public void remove(Long id) {

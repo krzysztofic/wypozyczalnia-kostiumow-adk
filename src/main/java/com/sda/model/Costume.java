@@ -1,14 +1,11 @@
 package com.sda.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Objects;
 
 @Entity
 @Data
@@ -30,6 +27,8 @@ public class Costume {
     private LocalDate borrowedTill;
     private String imageUrl;
     private Double price;
+    private String material;
+    private String description;
 
     public String getFormattedPrice() {
         return String.format("%.2f",price) + " PLN";

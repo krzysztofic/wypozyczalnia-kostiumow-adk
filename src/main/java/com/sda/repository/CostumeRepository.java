@@ -1,12 +1,13 @@
 package com.sda.repository;
 
 import com.sda.model.Costume;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-import java.util.Set;
+import java.util.Optional;
 
+public interface CostumeRepository extends PagingAndSortingRepository<Costume, Long> {
 
-public interface CostumeRepository extends JpaRepository<Costume, Long> {
+    Costume getOne(Long id);
 
-    Set<Costume> findAllById(Long id);
+    Optional<Costume> findAllById(Long id);
 }
