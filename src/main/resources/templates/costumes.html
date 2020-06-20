@@ -80,11 +80,11 @@
         <!-- /.col-lg-4 -->
         <div class="row my-3 w-100 align-item-center justify-content-center">
             <ul class="nav nav-pills">
-                <li class="nav-item" th:each="i : ${#numbers.sequence(0,costumes.totalPages-1)}">
+                <li class="nav-item" th:each="PageNumber : ${#numbers.sequence(0,costumes.totalPages-1)}">
                     <a class="nav-link"
-                       th:href="@{/costumes/(page=${i})}"
-                       th:text="${i}"
-                       th:classappend="${currentPage}==${i}?'active':''"></a>
+                       th:href="@{/costumes(page=${PageNumber})}"
+                       th:text="${PageNumber}"
+                       th:classappend="${currentPage}==${PageNumber}?'active':''"></a>
                 </li>
             </ul>
         </div>
