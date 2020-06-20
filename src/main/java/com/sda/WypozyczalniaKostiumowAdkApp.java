@@ -10,4 +10,6 @@ public class WypozyczalniaKostiumowAdkApp {
         SpringApplication.run(WypozyczalniaKostiumowAdkApp.class, args);
     }
 
+
+
 }

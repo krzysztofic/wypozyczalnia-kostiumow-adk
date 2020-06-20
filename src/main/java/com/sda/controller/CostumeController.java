@@ -1,7 +1,7 @@
 package com.sda.controller;
 
 import com.sda.model.Costume;
-import com.sda.model.User;
+import com.sda.model.Customer;
 import com.sda.repository.CostumeRepository;
 import com.sda.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,12 +46,12 @@ public class CostumeController {
     }
 
     @GetMapping("/rentForm")
-    public String sendForm(User user) {
+    public String sendForm(Customer customer) {
         return "rentForm";
     }
 
     @PostMapping("/rentForm")
-    public String handleCostumeForm(@ModelAttribute User user) {
+    public String handleCostumeForm(@ModelAttribute Customer customer) {
         return "thank-you";
     }
 

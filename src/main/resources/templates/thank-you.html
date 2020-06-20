@@ -7,32 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <style>
-        h1 {
-            font-size: 45px;
-           margin-left: 13px;
-           margin-bottom: 13px;
-        }
-
-        p {
-            font-style: oblique;
-            font-size: 19px;
-            margin: 13px;
-        }
-
-        a {
-            font-size: 19px;
-            margin: 13px;
-        }
-    </style>
     <title>Message</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
           rel="stylesheet">
-
     <!-- Custom styles for this template -->
-    <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
+    <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">">
+
+    <link rel = "stylesheet" type = "text/css" href = "/style.css"/>
 </head>
 
 <body>
@@ -61,13 +44,23 @@
     </div>
 </nav>
 
-<h1>Thank you for your message!</h1>
+<div class="container">
+<h2>Dziękujemy za wiadomość!</h2>
 
-<p th:text="'Email: ' + ${user.email}"/>
-<p th:text="'Full name: ' + ${user.name}"/>
-<p th:text="'Your message:  ' + ${user.message}"/>
+<p th:text="'Email: ' + ${customer.email}"/>
+<p th:text="'Imię i nazwisko: ' + ${customer.name}"/>
+<p th:text="'Twoja wiadomość:  ' + ${customer.message}"/>
 
-<a href="/rentForm">Submit another message</a>
+<a href="/rentForm">Wyślij wiadomość</a>
+</div>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; ADK Wypożyczalnia Kostiumów 2020</p>
+    </div>
+    <!-- /.container -->
+</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
