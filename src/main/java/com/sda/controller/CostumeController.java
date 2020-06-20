@@ -54,5 +54,10 @@ public class CostumeController {
     public String handleCostumeForm(@ModelAttribute User user) {
         return "thank-you";
     }
+
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
 }
 
