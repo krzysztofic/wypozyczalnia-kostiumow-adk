@@ -44,7 +44,7 @@ public class CostumeController {
     }
 
     @GetMapping("/about")
-    public String About() {
+    public String about() {
         return "about";
     }
 }
