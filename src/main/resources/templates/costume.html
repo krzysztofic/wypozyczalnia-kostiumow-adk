@@ -12,7 +12,6 @@
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
           rel="stylesheet">
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -25,18 +24,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+
                 <li class="nav-item">
                     <a class="nav-link" href="/">Strona główna</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/costumes">Kostiumy</a>
-                    <span class="sr-only">(current)</span>
+                    <a class="nav-link" href="/costumes">Kostiumy
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">O nas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/rentForm">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Zaloguj się</a>
                 </li>
             </ul>
         </div>
@@ -45,6 +49,76 @@
 
 <script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
 <script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+            <!-- Title -->
+            <h1 class="mt-4" th:text="${costume.name}"></h1>
+
+            <!-- Preview Image -->
+            <img class="img-fluid mt-4" th:src= "${costume.imageUrl}" src="http://placehold.it/500x900" alt="">
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+            <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Informacje</h5>
+                <div class="card-body">
+                    <h3>Cena: <span th:text="${costume.formattedPrice}"></span></h3>
+                    <p>Rodzaj: <span th:text="${costume.sex}"></span></p>
+                    <p>Materiał: <span th:text="${costume.material}"></span></p>
+                    <p>Opis kostiumu: </p>
+                    <span th:text="${costume.description}"></span>
+                </div>
+            </div>
+
+            <!-- Sizes -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle btn-lg btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dostępne rozmiary:
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" th:text="${costume.size}"></a>
+                </div>
+            </div>
+
+            <!--Button ORDER-->
+            <button type="button" class="btn btn-primary btn-lg btn-block mt-5">
+                <svg class="bi bi-basket pb-1" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z"/>
+                    <path fill-rule="evenodd" d="M1 7v1h14V7H1zM.5 6a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5H.5z"/>
+                    <path fill-rule="evenodd" d="M14 9H2v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9zM2 8a1 1 0 0 0-1 1v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1H2z"/>
+                    <path fill-rule="evenodd" d="M4 10a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+                <a href="/rentForm" style="color:white">WYŚLIJ ZAMÓWIENIE</a>
+            </button>
+
+        </div>
+
+        <div class="row">
+            <div class="footer lg-8">
+                <button type="button" class="btn btn-primary btn-lg btn-block mt-5">
+                    <svg class="bi bi-arrow-bar-left" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z"/>
+                        <path fill-rule="evenodd" d="M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z"/>
+                    </svg>
+                    <a href="/costumes" style="color:white">POWRÓT DO LISTY KOSTIUMÓW</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
+<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

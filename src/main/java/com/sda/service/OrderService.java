@@ -18,4 +18,7 @@ public class OrderService {
     public Page<Costume> findAll(PageRequest page) {
         return costumeRepository.findAll(page);
     }
+    public Costume getOne(Long id) {
+        return costumeRepository.getOne(id);
+    }
 }

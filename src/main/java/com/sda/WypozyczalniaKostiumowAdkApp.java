@@ -9,7 +9,4 @@ public class WypozyczalniaKostiumowAdkApp {
     public static void main(String[] args) {
         SpringApplication.run(WypozyczalniaKostiumowAdkApp.class, args);
     }
-
-
-
 }
