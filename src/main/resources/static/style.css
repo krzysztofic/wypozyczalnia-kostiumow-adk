@@ -1,0 +1,27 @@
+h1 {
+    font-size: 45px;
+    margin: 15px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+h2 {
+    font-size: 45px;
+    margin-left: 13px;
+    margin-bottom: 13px;
+}
+
+p {
+    font-style: oblique;
+    font-size: 19px;
+    margin: 13px;
+}
+
+a {
+    font-size: 19px;
+    margin: 13px;
+}

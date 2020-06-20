@@ -6,31 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <style>
-        h1 {
-            font-size: 45px;
-            margin-left: 13px;
-            margin-bottom: 13px;
-        }
-
-        p {
-            font-style: oblique;
-            font-size: 19px;
-            margin: 13px;
-        }
-
-        a {
-            font-size: 19px;
-            margin: 13px;
-        }
-        footer
-        {
-            position: fixed;
-            bottom: 0;
-            width:100%;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
     <title>Message</title>
 
@@ -68,7 +44,7 @@
 </nav>
 
 <div class="container">
-<h1>Dziękujemy za wiadomość!</h1>
+<h2>Dziękujemy za wiadomość!</h2>
 
 <p th:text="'Email: ' + ${customer.email}"/>
 <p th:text="'Imię i nazwisko: ' + ${customer.name}"/>
