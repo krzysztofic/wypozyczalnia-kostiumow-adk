@@ -34,6 +34,7 @@ public class OrderService {
     public Costume getOne(Long id) {
         return costumeRepository.getOne(id);
     }
+
     public Costume add(Long id, String name, Size size, Genre genre, Sex sex, LocalDate borrowedTill, String imageUrl, Double price, String material, String description) {
         return costumeRepository.save(new Costume(id, name, size, genre, sex, borrowedTill, imageUrl, price, material, description));
     }
@@ -41,8 +42,9 @@ public class OrderService {
     public void remove(Long id) {
         costumeRepository.delete(costumeRepository.findById(id).get());
     }
+
     public Optional<Costume> borrowCostume(Long id) {
-        Optional<Costume> notBorrowedCostume = costumeRepository.findAllById(id).stream()
+        Optional<Costume> notBorrowedCostume = costumeRepository.findById(id).stream()
                 .filter(costume -> costume.getBorrowedTill() == null).findAny();
         if (notBorrowedCostume.isPresent()) {
             Costume costumeToBorrow = notBorrowedCostume.get();

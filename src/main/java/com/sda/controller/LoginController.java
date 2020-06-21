@@ -12,7 +12,7 @@ public class LoginController {
         return new ModelAndView("login");
     }
 
-    @GetMapping("/Logged-out")
+    @GetMapping("/logged-out")
     public ModelAndView getLogout() {
         return new ModelAndView("logout");
     }
