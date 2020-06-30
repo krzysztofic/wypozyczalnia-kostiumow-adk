@@ -29,6 +29,16 @@ h2 {
   color: #cccccc;
 }
 
+/* AdminSite */
+
+.modal-footer {
+  display: block;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
 /* STRUCTURE */
 
 .wrapper {
