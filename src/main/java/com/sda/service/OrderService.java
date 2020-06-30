@@ -1,6 +1,5 @@
 package com.sda.service;
 
-import com.sda.model.*;
 import com.sda.model.Costume;
 import com.sda.repository.CostumeRepository;
 import org.springframework.data.domain.Page;
@@ -35,8 +34,8 @@ public class OrderService {
         return costumeRepository.getOne(id);
     }
 
-    public Costume add(Long id, String name, Size size, Genre genre, Sex sex, LocalDate borrowedTill, String imageUrl, Double price, String material, String description) {
-        return costumeRepository.save(new Costume(id, name, size, genre, sex, borrowedTill, imageUrl, price, material, description));
+    public Costume add(Costume costume) {
+        return costumeRepository.save(costume);
     }
 
     public void remove(Long id) {
