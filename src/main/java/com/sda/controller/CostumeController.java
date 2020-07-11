@@ -1,8 +1,11 @@
 package com.sda.controller;
 
+
 import com.sda.model.Costume;
 import com.sda.model.Customer;
 import com.sda.service.OrderService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,16 +52,6 @@ public class CostumeController {
     public ModelAndView orderCostume(@PathVariable(required = false) Long id) {
         ModelAndView modelAndView = new ModelAndView("rentForm");
         return modelAndView;
-    }
-
-    @GetMapping("/rentForm")
-    public String sendForm(Customer customer) {
-        return "rentForm";
-    }
-
-    @PostMapping("/rentForm")
-    public String handleCostumeForm(@ModelAttribute Customer customer) {
-        return "thank-you";
     }
 
     @GetMapping("/about")

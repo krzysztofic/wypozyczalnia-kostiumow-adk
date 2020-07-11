@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin Site</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
+
+    <!-- My own CSS -->
+    <link href="/style.css" rel="stylesheet" type='text/css'/>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ADK Wypożyczalnia Kostiumów</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Strona Główna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">O nas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rentForm">Kontakt</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout">Wyloguj</a>
+                    <span class="sr-only">(current)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="row mt-3">
+        <div class="col-12 text-center">
+            <a href="admin/add" class="btn btn-primary btn-lg">Dodaj kostium</a>
+        </div>
+        <div class="row col-lg-12 mt-3">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>SIZE</th>
+                    <th>GENRE</th>
+                    <th>SEX</th>
+                    <th>BORROWED TILL</th>
+                    <th>IMAGE</th>
+                    <th>PRICE</th>
+                    <th>MATERIAL</th>
+                    <th>DESCRIPTION</th>
+                    <th>REMOVE</th>
+                    <th>BORROW</th>
+                    <th>RETURN</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="costume : ${costumes}">
+                    <td th:text="${costume.id}"></td>
+                    <td th:text="${costume.name}"></td>
+                    <td th:text="${costume.size}"></td>
+                    <td th:text="${costume.genre}"></td>
+                    <td th:text="${costume.sex}"></td>
+                    <td th:text="${costume.borrowedTill}"></td>
+                    <!-- button for costume image -->
+                    <td>
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
+                                data-target="#imageModal" th:attrappend="data-target=${costume.id}">Zdjęcie</button>
+                        <div id="imageModal" class="modal fade" tabindex="-1" role="dialog" th:attrappend="id=${costume.id}">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img th:src="${costume.imageUrl}" class="img-responsive" style="width: 400px; height: 600px;">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <section th:text="${costume.imageUrl}" style="overflow-wrap: break-word;"></section>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </td>
+                    <!-- button for costume image END-->
+                    <td th:text="${costume.price}"></td>
+                    <td th:text="${costume.material}"></td>
+                    <!-- button for description -->
+                    <td>
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
+                                data-target="#descriptionModal" th:attrappend="data-target=${costume.id}">Opis</button>
+                        <div id="descriptionModal" class="modal fade" tabindex="-1" role="dialog" th:attrappend="id=${costume.id}">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <article th:text="${costume.description}" style="width: 400px; height: 600px;"></article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- button for description END-->
+                    <td><a href="#" th:href="'/admin/remove?id='+${costume.id}">X</a></td>
+                    <td><a href="#" th:href="'/admin/book?id='+${costume.id}" class="btn btn-primary btn-sm">Zarezerwuj
+                        kostium</a></td>
+                    <td><a href="#" th:href="'/admin/return?id='+${costume.id}" class="btn btn-primary btn-sm">Anuluj
+                        rezerwacje</a></td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
+<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ADK - wypożyczalnia kostiumów</title>
+    <title>ADK - Wypożyczalnia Kostiumów</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
@@ -17,7 +17,8 @@
     <!-- Custom styles for this template -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
 
-    <link rel = "stylesheet" type = "text/css" href = "/style.css"/>
+    <!-- My own CSS -->
+    <link href="/style.css" rel="stylesheet" type='text/css'/>
 </head>
 
 <body>
@@ -72,7 +73,8 @@
                             th:text="${costume.size}">L</span></p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    <a th:if="${costume.borrowedTill == null}" href="/rentForm" role="button" class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
+                    <a th:if="${costume.borrowedTill != null}" href="#" role="button" class="btn btn-primary btn-lg btn-block disabled">NIEDOSTĘPNY</a>
                 </div>
             </div>
 

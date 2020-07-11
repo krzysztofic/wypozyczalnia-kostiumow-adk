@@ -18,7 +18,7 @@
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
 
     <!-- My own CSS -->
-    <link href="/static/style.css" rel="stylesheet" type='text/css'/>
+    <link href="/style.css" rel="stylesheet" type='text/css'/>
 </head>
 
 <body>
@@ -112,7 +112,8 @@
                                     th:text="${costume.size}">L</span></p>
                         </div>
                         <div class="card-footer">
-                            <a href="/rentForm" role="button" class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
+                            <a th:if="${costume.borrowedTill == null}" href="/rentForm" role="button" class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
+                            <a th:if="${costume.borrowedTill != null}" href="#" role="button" class="btn btn-primary btn-lg btn-block disabled">NIEDOSTĘPNY</a>
                         </div>
                     </div>
                 </div>

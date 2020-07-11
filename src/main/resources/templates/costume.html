@@ -12,6 +12,10 @@
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
           rel="stylesheet">
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
+
+    <!-- My own CSS -->
+    <link href="/style.css" rel="stylesheet" type='text/css'/>
+
 </head>
 
 <body>
@@ -47,8 +51,6 @@
     </div>
 </nav>
 
-<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
-<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Page Content -->
 <div class="container">
     <div class="row">
@@ -89,15 +91,15 @@
             </div>
 
             <!--Button ORDER-->
-            <button type="button" class="btn btn-primary btn-lg btn-block mt-5">
+            <a th:if="${costume.borrowedTill == null}" href="/rentForm" type="button" class="btn btn-primary btn-lg btn-block mt-5">
                 <svg class="bi bi-basket pb-1" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z"/>
                     <path fill-rule="evenodd" d="M1 7v1h14V7H1zM.5 6a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5H.5z"/>
                     <path fill-rule="evenodd" d="M14 9H2v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9zM2 8a1 1 0 0 0-1 1v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1H2z"/>
                     <path fill-rule="evenodd" d="M4 10a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
                 </svg>
-                <a href="/rentForm" style="color:white">WYŚLIJ ZAMÓWIENIE</a>
-            </button>
+            </a>
+            <a th:if="${costume.borrowedTill != null}" href="#" class="btn btn-primary btn-lg btn-block disabled">NIEDOSTĘPNY</a>
 
         </div>
 
@@ -114,6 +116,14 @@
         </div>
     </div>
 </div>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; ADK Wypożyczalnia Kostiumów 2020</p>
+    </div>
+    <!-- /.container -->
+</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
