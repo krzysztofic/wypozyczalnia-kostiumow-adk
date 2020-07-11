@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet" >
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "/style.css"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ADK Wypożyczalnia Kostiumów</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Strona Główna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">O nas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/costumes">Kostiumy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rentForm">Kontakt</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin">Zaloguj się</a>
+                </li>
+                <span class="sr-only">(current)</span>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+         <!-- Login Form -->
+        <form action="#" th:action="@{/login}"  method="POST" >
+
+            <input type="text" id="login" class="fadeIn second" th:name="username" placeholder="username">
+            <input type="text" id="password" class="fadeIn third" th:name="password" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+    </div>
+
+</div>
+
+<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
+<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -7,47 +7,64 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <style>
-        h1 {
-            font-size: 45px;
-           margin-left: 13px;
-           margin-bottom: 13px;
-        }
-
-        p {
-            font-style: oblique;
-            font-size: 19px;
-            margin: 13px;
-        }
-
-        a {
-            font-size: 19px;
-            margin: 13px;
-        }
-    </style>
     <title>Message</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
           rel="stylesheet">
-
     <!-- Custom styles for this template -->
-    <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
+    <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">">
+
+    <link rel = "stylesheet" type = "text/css" href = "/style.css"/>
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">ADK Wypożyczalnia Kostiumów</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="costumes">Strona główna
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about">O Nas</a>
+                </li>
+                <li class="active">
+                    <a class="nav-link" href="rentForm">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-<h1>Thank you for your message!</h1>
+<div class="container">
+<h2>Dziękujemy za wiadomość!</h2>
 
-<p th:text="'Email: ' + ${user.email}"/>
-<p th:text="'Full name: ' + ${user.name}"/>
-<p th:text="'Your message:  ' + ${user.message}"/>
+<p th:text="'Email: ' + ${customer.email}"/>
+<p th:text="'Imię i nazwisko: ' + ${customer.name}"/>
+<p th:text="'Twoja wiadomość:  ' + ${customer.message}"/>
 
-<a href="/rentForm">Submit another message</a>
+<a href="/rentForm">Wyślij wiadomość</a>
+</div>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; ADK Wypożyczalnia Kostiumów 2020</p>
+    </div>
+    <!-- /.container -->
+</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
-<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>>
 
 </body>
 </html>

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ADK - Wypożyczalnia kostiumów </title>
+    <title>ADK - Wypożyczalnia Kostiumów </title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
@@ -18,7 +18,7 @@
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
 
     <!-- My own CSS -->
-    <link href="/static/style.css" rel="stylesheet" type='text/css'/>
+    <link href="/style.css" rel="stylesheet" type='text/css'/>
 </head>
 
 <body>
@@ -46,11 +46,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/rentForm">Kontakt</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Zaloguj się</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-
 
 <!-- Page Content -->
 <div class="container">
@@ -110,7 +112,8 @@
                                     th:text="${costume.size}">L</span></p>
                         </div>
                         <div class="card-footer">
-                            <a href="/rentForm" role="button" class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
+                            <a th:if="${costume.borrowedTill == null}" href="/rentForm" role="button" class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
+                            <a th:if="${costume.borrowedTill != null}" href="#" role="button" class="btn btn-primary btn-lg btn-block disabled">NIEDOSTĘPNY</a>
                         </div>
                     </div>
                 </div>
@@ -133,7 +136,7 @@
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; ADK Wypożyczalnia kostiumów 2019</p>
+        <p class="m-0 text-center text-white">Copyright &copy; ADK Wypożyczalnia Kostiumów 2020</p>
     </div>
     <!-- /.container -->
 </footer>

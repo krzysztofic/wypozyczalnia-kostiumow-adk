@@ -7,26 +7,46 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <style>
-        h1 {
-            font-size:45px;
-            margin: 13px;
-        }
-    </style>
-    <title>Costume rent form</title>
+    <title>Skontaktuj się z nami</title>
     <!-- Bootstrap core CSS -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
           rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
+
+    <link rel = "stylesheet" type = "text/css" href = "/style.css"/>
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">ADK Wypożyczalnia Kostiumów</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="costumes">Strona główna
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about">O Nas</a>
+                </li>
+                <li class="active">
+                    <a class="nav-link" href="rentForm">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-<h1>Costume rent form</h1>
+<div class="container">
+<h1>Prześlij nam swoją wiadomość</h1>
 
-<form action="#" th:action="@{/rentForm}" th:object="${user}" method="post">
+<form action="#" th:action="@{/rentForm}" th:object="${customer}" method="post">
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
@@ -34,25 +54,36 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="inputFullName" class="col-sm-2 col-form-label">Full name</label>
+        <label for="inputFullName" class="col-sm-2 col-form-label">Imię i nazwisko</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="inputFullName" placeholder="Full name" th:field="*{name}">
         </div>
     </div>
-    </div>
     <div class="form-group">
-        <label for="exampleMessage" class="col-sm-2 col-form-label">Message</label>
+        <label for="exampleMessage" class="col-sm-2 col-form-label">Wiadomość</label>
         <div class="col-sm-10">
-        <textarea class="form-control" id="exampleMessage" placeholder="Message" th:field="*{message}"></textarea>
+            <textarea class="form-control" id="exampleMessage" placeholder="Message" th:field="*{message}"></textarea>
         </div>
     </div>
     <div>
         <div class="col-sm-10">
-        <input class="btn btn-primary" type="submit" value="Submit">
-        <input class="btn btn-primary" type="reset" value="Reset">
+            <input class="btn btn-primary" type="submit" value="Wyślij wiadomość">
+            <input class="btn btn-primary" type="reset" value="Zresetuj">
         </div>
     </div>
 </form>
+</div>
+
+<!-- Footer -->
+<div class="row">
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; ADK Wypożyczalnia Kostiumów 2020</p>
+    </div>
+    <!-- /.container -->
+</footer>
+</div>
+
 <!-- Bootstrap core JavaScript -->
 <script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
 <script src="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

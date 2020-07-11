@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ADK - wypożyczalnia kostiumówe</title>
+    <title>ADK - Wypożyczalnia Kostiumów</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css"
@@ -17,6 +17,8 @@
     <!-- Custom styles for this template -->
     <link href="https://startbootstrap.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
 
+    <!-- My own CSS -->
+    <link href="/style.css" rel="stylesheet" type='text/css'/>
 </head>
 
 <body>
@@ -32,7 +34,7 @@
             </div>
         </form>
         <div>
-        <a class="navbar-brand" href="/">ADK Wypożyczalnia kostiumów</a>
+        <a class="navbar-brand" href="/">ADK Wypożyczalnia Kostiumów</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Storna główna</a>
+                    <a class="nav-link" href="/">Strona główna</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/costumes">Kostiumy</a>
@@ -52,6 +54,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/rentForm">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Zaloguj się</a>
                 </li>
             </ul>
         </div>
@@ -77,11 +82,23 @@
                             th:text="${costume.size}">L</span></p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    <a th:if="${costume.borrowedTill == null}" href="/rentForm" role="button" class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
+                    <a th:if="${costume.borrowedTill != null}" href="#" role="button" class="btn btn-primary btn-lg btn-block disabled">NIEDOSTĘPNY</a>
                 </div>
             </div>
+
         </div>
-        <!-- /.col-lg-9 -->
+        <!-- /.col-lg-4 -->
+        <div class="row my-3 w-100 align-item-center justify-content-center">
+            <ul class="nav nav-pills">
+                <li class="nav-item" th:each="PageNumber : ${#numbers.sequence(0,costumes.totalPages-1)}">
+                    <a class="nav-link"
+                       th:href="@{/costumes(page=${PageNumber})}"
+                       th:text="${PageNumber}"
+                       th:classappend="${currentPage}==${PageNumber}?'active':''"></a>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- /.row -->
 </div>
@@ -90,7 +107,7 @@
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; ADK Wypożyczalnia kostiumów 201</p>
+        <p class="m-0 text-center text-white">Copyright &copy; ADK Wypożyczalnia kostiumów 2020</p>
     </div>
     <!-- /.container -->
 </footer>
