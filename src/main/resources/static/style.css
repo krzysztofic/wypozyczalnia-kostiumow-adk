@@ -29,6 +29,11 @@ h2 {
   color: #cccccc;
 }
 
+.feedback>h2 {
+  /* bootstrap primary blue*/
+  color: #007BFF;
+}
+
 /* AdminSite */
 
 .modal-footer {
@@ -117,7 +122,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+#formContent>input[type=text] {
   /* hue of white */
   background-color: #f6f6f6;
   /* black */
@@ -146,7 +151,7 @@ input[type=text]:focus {
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]::placeholder {
+#formContent>input[type=text]::placeholder {
   /* hue of white */
   color: #cccccc;
 }
