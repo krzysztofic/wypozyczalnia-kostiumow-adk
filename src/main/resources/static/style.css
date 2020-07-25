@@ -29,6 +29,11 @@ h2 {
   color: #cccccc;
 }
 
+.feedback>h2 {
+  /* bootstrap primary blue*/
+  color: #007BFF;
+}
+
 /* AdminSite */
 
 .modal-footer {
@@ -117,7 +122,8 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text]#login.fadeIn.second,
+input[type=text]#password.fadeIn.third {
   /* hue of white */
   background-color: #f6f6f6;
   /* black */
@@ -146,7 +152,8 @@ input[type=text]:focus {
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]::placeholder {
+input[type=text]#login.fadeIn.second::placeholder,
+input[type=text]#password.fadeIn.third::placeholder {
   /* hue of white */
   color: #cccccc;
 }
