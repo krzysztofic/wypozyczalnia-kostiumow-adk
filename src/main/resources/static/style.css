@@ -1,16 +1,12 @@
 /* BASIC */
 
-body, html {
+body {
   font-family: "Poppins", sans-serif;
-  height: 100%;
-  padding-bottom: 300px !important;
-   position: relative;
 }
 
 footer {
   bottom: 0;
   width: 100%;
-
 }
 
 a {
@@ -114,6 +110,10 @@ input[type=button], input[type=submit], input[type=reset]  {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+input[type=submit].btn.btn-primary {
+  margin-bottom: 5px;
 }
 
 
