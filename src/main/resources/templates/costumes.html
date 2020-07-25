@@ -26,15 +26,9 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
-        <form action="/costumes" class="form-inline">
-            <div class="form-group mb-2">
-                <input type ="text" class="form-control" name="name" placeholder="Wyszukaj Strój..." />
-                <input type="submit" value="Szukaj" class="btn btn-primary"/>
 
-            </div>
-        </form>
         <div>
-        <a class="navbar-brand" href="/">ADK Wypożyczalnia Kostiumów</a>
+            <a class="navbar-brand" href="/">ADK Wypożyczalnia Kostiumów</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +59,15 @@
 
 <!-- Page Content -->
 <div class="container">
+    <div class="row">
+        <form action="/costumes" class="form-inline">
+            <div class="form-group mb-2">
+                <input type="text" class="" name="name" placeholder="Wyszukaj Strój..."/>
+                <input type="submit" value="Szukaj" class="btn btn-primary"/>
 
+            </div>
+        </form>
+    </div>
     <div class="row">
 
         <div th:each="costume : ${costumes}" class="col-lg-4 col-md-6 mb-4 mt-4">
@@ -82,8 +84,10 @@
                             th:text="${costume.size}">L</span></p>
                 </div>
                 <div class="card-footer">
-                    <a th:if="${costume.borrowedTill == null}" href="/rentForm" role="button" class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
-                    <a th:if="${costume.borrowedTill != null}" href="#" role="button" class="btn btn-primary btn-lg btn-block disabled">NIEDOSTĘPNY</a>
+                    <a th:if="${costume.borrowedTill == null}" href="/rentForm" role="button"
+                       class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
+                    <a th:if="${costume.borrowedTill != null}" href="#" role="button"
+                       class="btn btn-primary btn-lg btn-block disabled">NIEDOSTĘPNY</a>
                 </div>
             </div>
 
@@ -93,7 +97,7 @@
             <ul class="nav nav-pills">
                 <li class="nav-item" th:each="PageNumber : ${#numbers.sequence(0,costumes.totalPages-1)}">
                     <a class="nav-link"
-                       th:href="@{/costumes(page=${PageNumber})}"
+                       th:href="@{/costumes(page=${PageNumber}, name=${currentPhrase})}"
                        th:text="${PageNumber}"
                        th:classappend="${currentPage}==${PageNumber}?'active':''"></a>
                 </li>

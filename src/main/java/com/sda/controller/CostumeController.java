@@ -44,9 +44,9 @@ public class CostumeController {
     public ModelAndView showAll(@RequestParam(defaultValue = "0")int page,
                                 @RequestParam(defaultValue="") String name) {
         ModelAndView modelAndView = new ModelAndView("costumes");
-        modelAndView.addObject("costumes", orderService.findAll(PageRequest.of(page, 6)));
+        modelAndView.addObject("costumes", orderService.findByName(name, page));
         modelAndView.addObject("currentPage", page);
-        modelAndView.addObject("costumes2", orderService.findByName(name));
+        modelAndView.addObject("currentPhrase", name);
         return modelAndView;
     }
 
