@@ -66,22 +66,35 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
                         <a href="/costumes"><img class="d-block img-fluid"
-                                                 src="https://iv.pl/images/8d96707cf910d162ab3506c806f0c64c.png"
+                                                 src="https://iv.pl/images/07bb1f533e6971447c7d4298e5c3b43d.png"
                                                  alt="First slide"></a>
                     </div>
                     <div class="carousel-item">
                         <a href="https://warsawcomiccon.pl"><img class="d-block img-fluid"
-                                                                 src="https://iv.pl/images/2bc1d8559795afbd3ad5c54286b642f5.png"
+                                                                 src="https://iv.pl/images/53bff20dd0ade1944b59efc0c4b6e767.jpg"
                                                                  alt="Second slide"></a>
                     </div>
                     <div class="carousel-item">
                         <a href="/costumes"><img class="d-block img-fluid"
-                                                 src="https://iv.pl/images/ec4661ee8e2269766166ad7affd6ac71.jpg"
-                                                 alt="Third slide"></a>
+                                                 src="https://iv.pl/images/d2f5d4a397ba87b2b7894471b9ee35c0.jpg"
+                                                 alt="Fourth slide"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/costumes"><img class="d-block img-fluid"
+                                                 src="https://iv.pl/images/c524d96fba6717902f60784136657892.jpg"
+                                                 alt="Fifth slide"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/costumes"><img class="d-block img-fluid"
+                                                 src="https://iv.pl/images/a18ff9bfc369ddb4149539c5899f040d.jpg"
+                                                 alt="Sixth slide"></a>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -110,6 +123,7 @@
                             <h5 th:text="${costume.formattedPrice}"></h5>
                             <p class="card-text">Rodzaj: <span th:text="${costume.sex}">Male</span>, Rozmiar: <span
                                     th:text="${costume.size}">L</span></p>
+                            <br>
                         </div>
                         <div class="card-footer">
                             <a th:if="${costume.borrowedTill == null}" href="/rentForm" role="button" class="btn btn-primary btn-lg btn-block">ZAMÓW</a>
