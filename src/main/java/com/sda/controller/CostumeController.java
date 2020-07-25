@@ -41,10 +41,12 @@ public class CostumeController {
     }
 
     @GetMapping("/costumes")
-    public ModelAndView showAll(@RequestParam(defaultValue = "0")int page) {
+    public ModelAndView showAll(@RequestParam(defaultValue = "0")int page,
+                                @RequestParam(defaultValue="") String name) {
         ModelAndView modelAndView = new ModelAndView("costumes");
-        modelAndView.addObject("costumes", orderService.findAll(PageRequest.of(page, 6)));
+        modelAndView.addObject("costumes", orderService.findByName(name, page));
         modelAndView.addObject("currentPage", page);
+        modelAndView.addObject("currentPhrase", name);
         return modelAndView;
     }
 
@@ -58,5 +60,6 @@ public class CostumeController {
     public String about() {
         return "about";
     }
+
 }
 

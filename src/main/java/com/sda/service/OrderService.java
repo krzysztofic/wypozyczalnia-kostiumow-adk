@@ -4,6 +4,7 @@ import com.sda.model.Costume;
 import com.sda.repository.CostumeRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -58,4 +59,9 @@ public class OrderService {
         costumeToReturn.setBorrowedTill(null);
         return costumeRepository.save(costumeToReturn);
     }
+
+    public Page<Costume> findByName (String name, Integer page) {
+        return costumeRepository.findByNameLikeIgnoreCase("%"+name+"%", PageRequest.of(page, 6));
+    }
+
 }
