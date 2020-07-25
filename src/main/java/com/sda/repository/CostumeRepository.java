@@ -11,7 +11,8 @@ import java.util.Optional;
 public interface CostumeRepository extends PagingAndSortingRepository<Costume, Long> {
 
     Costume getOne(Long id);
-    Page<Costume> findByNameLikeIgnoreCase(String name, Pageable page);
 
+    Page<Costume> findByNameLikeIgnoreCase(String name, Pageable page);
 }
+
 
