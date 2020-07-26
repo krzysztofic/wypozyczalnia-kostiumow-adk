@@ -25,7 +25,7 @@ Other modules also include:<br>
 (with the complete description including: size, material, genre, avaiability and ability to book the costume)
 - Search bar that makes searching for items easier
 - Contact form module that allows to send and reset messages to the administrator
-- About us page that shows the location of the fancy dress shop together with linked YoutTube video
+- <em>About us</em> page that shows the location of the fancy dress shop together with linked YouTube video
 - Administration module that allows to log in/log out to the separate page where the admin can add/remove costumes, book the costume and remove the booking 
 (the following information are stored: name, size, genre, sex, period of time the costume is booked, price, material, borrow/return/remove options)<br>
 
