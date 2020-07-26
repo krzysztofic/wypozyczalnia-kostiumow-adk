@@ -4,7 +4,11 @@ with Spring Boot framework.</p>
 
 ## About the project 
 <p>The architeture deployed in the fancy dress shop is the three-tier solution that displays the list of costumes available for booking and provides the administrator menu with one- or two-click access to most pages.<br>
-Other modules also include the full list of costumes as well as the single pages for each costume, the contact form and About us page.<br></p>
+Other modules also include:<br>
+  - the full list of costumes<br>
+  - single pages for each costume<br>
+  - the contact form<br>
+  - <em>About us</em> page<br></p>
 
 ![49gwhd](https://user-images.githubusercontent.com/55624673/88480808-682be400-cf58-11ea-97bd-2b6f25c14362.gif)
 
