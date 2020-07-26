@@ -1,6 +1,6 @@
 # Fancy dress shop project 
 <p>The project was done during the course 'Java from scratch' delived by Software Development Academy to show the practical use of Java programming language together
-with Spring Boot technology.</p>
+with Spring Boot framework.</p>
 
 ## About the project 
 <p>The architeture deployed in the fancy dress shop is the three-tier solution that displays the list of costumes available for booking and provides the administrator menu with one- or two-click access to most pages.<br>
